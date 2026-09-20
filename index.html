@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>锡亚高旅行手册 · 9.30–10.9</title>
+<style>
+:root{
+  --bg:#f4f1ea; --card:#ffffff; --ink:#1f2937; --sub:#6b7280; --line:#e5e1d8;
+  --accent:#0e7490; --accent-soft:#e0f2f5; --warn:#b45309; --warn-soft:#fef3c7;
+  --night:#0f172a; --night-card:#1e293b; --night-ink:#e2e8f0; --night-sub:#94a3b8;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f172a; --card:#1e293b; --ink:#e2e8f0; --sub:#94a3b8; --line:#334155;
+    --accent:#22d3ee; --accent-soft:#164e63; --warn:#fbbf24; --warn-soft:#422006;
+  }
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.6; padding-bottom:40px;
+}
+.wrap{max-width:680px; margin:0 auto; padding:16px 14px;}
+header{padding:18px 4px 6px;}
+header h1{margin:0; font-size:22px; letter-spacing:.5px;}
+header .meta{color:var(--sub); font-size:13px; margin-top:4px;}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:16px; margin-top:14px;
+}
+.card h2{margin:0 0 10px; font-size:16px; display:flex; align-items:center; gap:8px;}
+.card h2 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+/* countdown */
+#nextLabel{font-size:14px; color:var(--sub);}
+#nextName{font-size:18px; font-weight:600; margin:6px 0 12px;}
+.cd{display:flex; gap:10px; align-items:flex-end;}
+.cd .u{flex:1; background:var(--accent-soft); border-radius:12px; padding:10px 4px; text-align:center;}
+.cd .n{font-size:30px; font-weight:700; font-variant-numeric:tabular-nums; line-height:1.1;}
+.cd .l{font-size:11px; color:var(--sub); margin-top:2px;}
+.cd .colon{font-size:26px; font-weight:700; padding-bottom:18px; color:var(--sub);}
+.tz{font-size:11px; color:var(--sub); margin-top:10px;}
+/* map */
+svg{display:block; width:100%; height:auto;}
+.legend{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
+.legend span{font-size:11px; padding:3px 8px; border-radius:999px; background:var(--accent-soft); color:var(--ink);}
+/* tables */
+table{width:100%; border-collapse:collapse; font-size:13.5px;}
+th,td{text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); vertical-align:top;}
+th{color:var(--sub); font-weight:500; font-size:12px;}
+.flight-badge{display:inline-block; font-size:11px; padding:1px 7px; border-radius:6px; background:var(--accent-soft); color:var(--accent);}
+.tbd{color:var(--warn); background:var(--warn-soft); font-size:12px; padding:2px 8px; border-radius:6px; display:inline-block;}
+/* days */
+.day{border:1px solid var(--line); border-radius:14px; margin-top:10px; overflow:hidden;}
+.day-head{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 14px; cursor:pointer; background:transparent; border:0; color:inherit; width:100%;
+}
+.day-head .title{font-size:15px; font-weight:600; text-align:left;}
+.day-head .sub{font-size:12px; color:var(--sub); margin-top:2px; font-weight:400;}
+.day-head .arrow{transition:transform .2s; color:var(--sub); font-size:14px;}
+.day.open .day-head .arrow{transform:rotate(90deg);}
+.day-body{display:none; padding:4px 14px 14px; border-top:1px dashed var(--line);}
+.day.open .day-body{display:block;}
+.tl{display:grid; grid-template-columns:62px 1fr; gap:6px 10px; padding-top:10px; font-size:13.5px;}
+.tl .time{color:var(--sub); font-variant-numeric:tabular-nums; padding-top:2px;}
+.tag{font-size:11px; background:var(--warn-soft); color:var(--warn); padding:1px 6px; border-radius:5px; margin-left:6px;}
+a.maplink{color:var(--accent); text-decoration:none; border-bottom:1px dashed var(--accent);}
+.navbtn{
+  display:block; width:100%; margin-top:12px; text-align:center;
+  background:var(--accent); color:#fff; text-decoration:none; padding:11px; border-radius:10px; font-size:14px; font-weight:600;
+}
+.minimap{margin-top:10px; border-radius:10px; background:var(--bg); padding:6px;}
+/* todos */
+ol.todo{margin:6px 0 0; padding-left:20px; font-size:14px;}
+ol.todo li{margin:7px 0;}
+/* tips */
+ul.tips{margin:6px 0 0; padding-left:20px; font-size:13.5px;}
+ul.tips li{margin:7px 0;}
+.foot{text-align:center; color:var(--sub); font-size:11px; margin-top:22px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>锡亚高 · 冲浪与跳岛</h1>
+  <div class="meta">9/30 上海出发 → 马尼拉 → 宿务 → 锡亚高 → 10/9 凌晨回上海　｜　同住人：殷捷曦、JIN YUE</div>
+</header>
+
+<!-- 1 此刻关注 -->
+<section class="card">
+  <h2><span class="dot"></span>此刻关注</h2>
+  <div id="nextLabel">下一个行程事件</div>
+  <div id="nextName">—</div>
+  <div class="cd">
+    <div class="u"><div class="n" id="cdD">0</div><div class="l">天</div></div>
+    <div class="colon">:</div>
+    <div class="u"><div class="n" id="cdH">00</div><div class="l">时</div></div>
+    <div class="colon">:</div>
+    <div class="u"><div class="n" id="cdM">00</div><div class="l">分</div></div>
+    <div class="colon">:</div>
+    <div class="u"><div class="n" id="cdS">00</div><div class="l">秒</div></div>
+  </div>
+  <div class="tz">所有时间均为菲律宾当地时间（UTC+8，与国内同时区）</div>
+</section>
+
+<!-- 2 总览地图 -->
+<section class="card">
+  <h2><span class="dot"></span>行程总览</h2>
+  <svg viewBox="0 0 760 520" role="img" aria-label="锡亚高行程手绘地图">
+    <!-- sea -->
+    <rect x="0" y="0" width="760" height="520" fill="none"/>
+    <!-- island blob (hand-drawn feel) -->
+    <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z"
+          fill="rgba(16,185,129,.08)" stroke="#94a3b8" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Sohoton far offshore -->
+    <ellipse cx="690" cy="230" rx="42" ry="26" fill="rgba(239,68,68,.10)" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 5"/>
+    <text x="690" y="234" font-size="11" text-anchor="middle" fill="#ef4444">Sohoton</text>
+
+    <!-- routes (per day) -->
+    <!-- D1 green: airport -> GL -->
+    <path d="M295,130 C330,200 380,290 455,350" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+    <!-- D2 teal: GL -> 3 islands -->
+    <path d="M465,360 C490,395 520,425 545,445 C565,460 585,455 595,445" fill="none" stroke="#14b8a6" stroke-width="3" stroke-linecap="round"/>
+    <!-- D3 orange: GL -> Sugba -> Maasin -->
+    <path d="M465,355 C380,320 260,280 175,235 C200,260 230,265 250,260 C330,300 400,360 435,400" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    <!-- D4 purple: GL -> Magpupungko -->
+    <path d="M465,355 C500,310 525,275 545,255 C552,245 558,230 560,215" fill="none" stroke="#a855f7" stroke-width="3" stroke-linecap="round"/>
+    <!-- D5 blue: GL -> Cloud9 -->
+    <path d="M465,360 C460,380 455,395 450,405" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    <!-- D6 red dashed: GL -> Sohoton -->
+    <path d="M470,365 C540,330 610,280 660,245" fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 6"/>
+    <!-- D7 gray dashed: GL -> airport (departure) -->
+    <path d="M455,350 C400,270 340,190 298,135" fill="none" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 6"/>
+
+    <!-- markers -->
+    <g font-size="12" fill="currentColor">
+      <!-- airport -->
+      <circle cx="295" cy="128" r="7" fill="#10b981"/>
+      <text x="295" y="108" text-anchor="middle">Sayak机场</text>
+      <!-- Sugba -->
+      <circle cx="170" cy="232" r="6" fill="#f59e0b"/>
+      <text x="150" y="215" text-anchor="middle">Sugba泻湖</text>
+      <!-- Coconut mountain -->
+      <circle cx="248" cy="258" r="5" fill="#f59e0b"/>
+      <text x="248" y="285" text-anchor="middle">椰林观景台</text>
+      <!-- Maasin -->
+      <circle cx="438" cy="402" r="5" fill="#f59e0b"/>
+      <text x="405" y="425" text-anchor="middle">Maasin河</text>
+      <!-- Pacifico -->
+      <circle cx="430" cy="92" r="5" fill="#6b7280"/>
+      <text x="430" y="75" text-anchor="middle">Pacifico</text>
+      <!-- Magpupungko -->
+      <circle cx="562" cy="212" r="6" fill="#a855f7"/>
+      <text x="590" y="205" text-anchor="start">Magpupungko</text>
+      <!-- Tayangban -->
+      <circle cx="545" cy="255" r="4.5" fill="#a855f7"/>
+      <text x="560" y="275" text-anchor="start">Tayangban溶洞</text>
+      <!-- GL / hotel -->
+      <circle cx="470" cy="358" r="9" fill="#0e7490"/>
+      <text x="470" y="385" text-anchor="middle" font-weight="600">General Luna（住6晚）</text>
+      <!-- Cloud9 -->
+      <circle cx="448" cy="408" r="5" fill="#3b82f6"/>
+      <text x="420" y="412" text-anchor="end">Cloud9</text>
+      <!-- islands -->
+      <circle cx="545" cy="448" r="5" fill="#14b8a6"/>
+      <text x="545" y="470" text-anchor="middle">Guyam</text>
+      <circle cx="578" cy="462" r="5" fill="#14b8a6"/>
+      <text x="595" y="480" text-anchor="middle">Daku</text>
+      <circle cx="600" cy="442" r="4.5" fill="#14b8a6"/>
+      <text x="625" y="440" text-anchor="middle">Naked裸岛</text>
+      <!-- Secret beach -->
+      <circle cx="385" cy="430" r="4" fill="#14b8a6"/>
+      <text x="385" y="452" text-anchor="middle">Secret Beach</text>
+    </g>
+  </svg>
+  <div class="legend">
+    <span style="background:#10b98122">10/2 上岛</span>
+    <span style="background:#14b8a622">10/3 三岛跳岛</span>
+    <span style="background:#f59e0b22">10/4 Sugba</span>
+    <span style="background:#a855f722">10/5 潮汐岩池</span>
+    <span style="background:#3b82f622">10/6 冲浪课</span>
+    <span style="background:#ef444422">10/7 Sohoton</span>
+    <span style="background:#6b728022">10/8 返程</span>
+  </div>
+</section>
+
+<!-- 3 已确认预订 -->
+<section class="card">
+  <h2><span class="dot"></span>已确认机票 / 住宿</h2>
+  <table>
+    <tr><th>日期</th><th>航班 / 项目</th><th>时刻（当地）</th><th>路线</th></tr>
+    <tr>
+      <td>9/30 周三</td>
+      <td><span class="flight-badge">PR337 菲航</span><br><span class="tbd">出票中</span></td>
+      <td>16:00–19:40</td>
+      <td>上海浦东T2 → 马尼拉T1</td>
+    </tr>
+    <tr>
+      <td>10/1 周四</td>
+      <td><span class="flight-badge">5J565 宿务太平洋</span><br><span class="tbd">出票中</span></td>
+      <td>10:45–12:20</td>
+      <td>马尼拉T3 → 宿务马克坦</td>
+    </tr>
+    <tr>
+      <td>10/9 周五</td>
+      <td><span class="flight-badge">MU5024 东航</span></td>
+      <td>02:40–06:45</td>
+      <td>宿务T2 → 上海浦东T1（红眼）</td>
+    </tr>
+  </table>
+  <table style="margin-top:6px">
+    <tr><th>住宿</th><th>地址</th><th>日期</th></tr>
+    <tr>
+      <td><b>Vibes Villas Siargao</b></td>
+      <td>Poblacion 5, General Luna, Surigao del Norte 8419<br><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vibes+Villas+Siargao+General+Luna" target="_blank" rel="noopener">在地图中查看</a></td>
+      <td>10/2 入住 – 10/8 退房（6晚）</td>
+    </tr>
+  </table>
+  <p style="font-size:12.5px;color:var(--sub);margin:10px 0 0">
+    待补（同行人预订）：宿务↔锡亚高两段航班、9/30马尼拉与10/1、10/8宿务共三晚酒店、机场包车、租摩托、跳岛/Sugba/Sohoton一日游。
+  </p>
+</section>
+
+<!-- 4 逐日行程 -->
+<section class="card">
+  <h2><span class="dot"></span>逐日行程</h2>
+
+  <!-- D1 -->
+  <div class="day">
+    <button class="day-head">
+      <div><div class="title">10/2 周五 · 上岛适应</div><div class="sub">Sayak机场 → General Luna · 住 Vibes Villas</div></div>
+      <div class="arrow">›</div>
+    </button>
+    <div class="day-body">
+      <div class="tl">
+        <div class="time">上午</div><div>宿务飞锡亚高 Sayak 机场 <span class="tag">航班待确认</span><br><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Sayak+Airport+Del+Carmen+Siargao" target="_blank" rel="noopener">Sayak机场</a></div>
+        <div class="time">11:30</div><div>包车约40分钟到 GL，入住 <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Vibes+Villas+Siargao" target="_blank" rel="noopener">Vibes Villas</a>，寄存行李</div>
+        <div class="time">16:30</div><div>租摩托熟悉镇上主干道</div>
+        <div class="time">17:30</div><div>骑去 <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Cloud+9+Siargao+Boardwalk&travelmode=driving" target="_blank" rel="noopener">Cloud9 栈桥</a>，看冲浪大神管浪、浅滩踩水</div>
+        <div class="time">19:00</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Kermit+Siargao&travelmode=walking" target="_blank" rel="noopener">Kermit 柴火披萨</a>，早点休息调时差</div>
+      </div>
+      <div class="minimap">
+        <svg viewBox="0 0 760 520">
+          <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z" fill="rgba(16,185,129,.08)" stroke="#94a3b8" stroke-width="2.5"/>
+          <path d="M295,130 C330,200 380,290 455,350" fill="none" stroke="#10b981" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="295" cy="128" r="7" fill="#10b981"/><text x="295" y="108" font-size="12" text-anchor="middle">Sayak机场</text>
+          <circle cx="470" cy="358" r="9" fill="#0e7490"/><text x="470" y="385" font-size="12" text-anchor="middle">GL / Cloud9</text>
+        </svg>
+      </div>
+      <a class="navbtn" href="https://www.google.com/maps/dir/?api=1&origin=Sayak+Airport+Del+Carmen+Siargao&destination=Vibes+Villas+Siargao&waypoints=Cloud+9+Siargao&travelmode=driving" target="_blank" rel="noopener">一键打开全天导航</a>
+    </div>
+  </div>
+
+  <!-- D2 -->
+  <div class="day">
+    <button class="day-head">
+      <div><div class="title">10/3 周六 · 经典三岛跳岛</div><div class="sub">Guyam / Naked裸岛 / Daku · 船上午餐</div></div>
+      <div class="arrow">›</div>
+    </button>
+    <div class="day-body">
+      <div class="tl">
+        <div class="time">09:00</div><div>GL 码头包船出海 <span class="tag">提前订船</span></div>
+        <div class="time">09:30</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Guyam+Island+Siargao" target="_blank" rel="noopener">Guyam 小岛</a> 网红打卡</div>
+        <div class="time">10:30</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Naked+Island+Siargao" target="_blank" rel="noopener">Naked 裸岛</a> 纯白沙滩拍照</div>
+        <div class="time">12:00</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Daku+Island+Siargao" target="_blank" rel="noopener">Daku 岛</a> 浮潜、吊床午休、船上海鲜午餐</div>
+        <div class="time">15:00</div><div>返程回镇冲澡</div>
+        <div class="time">17:00</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Secret+Beach+Siargao&travelmode=driving" target="_blank" rel="noopener">Secret Beach</a> 看橘子海日落</div>
+      </div>
+      <div class="minimap">
+        <svg viewBox="0 0 760 520">
+          <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z" fill="rgba(20,184,166,.08)" stroke="#94a3b8" stroke-width="2.5"/>
+          <path d="M465,360 C490,395 520,425 545,445 C565,460 585,455 595,445" fill="none" stroke="#14b8a6" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="470" cy="358" r="8" fill="#0e7490"/><text x="470" y="385" font-size="12" text-anchor="middle">GL</text>
+          <circle cx="545" cy="448" r="5" fill="#14b8a6"/><text x="545" y="470" font-size="12" text-anchor="middle">Guyam</text>
+          <circle cx="578" cy="462" r="5" fill="#14b8a6"/><text x="595" y="480" font-size="12" text-anchor="middle">Daku</text>
+          <circle cx="600" cy="442" r="4.5" fill="#14b8a6"/><text x="625" y="440" font-size="12" text-anchor="middle">Naked</text>
+        </svg>
+      </div>
+      <a class="navbtn" href="https://www.google.com/maps/dir/?api=1&origin=General+Luna+Siargao&destination=Secret+Beach+Siargao&waypoints=Guyam+Island|Naked+Island|Daku+Island" target="_blank" rel="noopener">一键打开全天导航</a>
+    </div>
+  </div>
+
+  <!-- D3 -->
+  <div class="day">
+    <button class="day-head">
+      <div><div class="title">10/4 周日 · Sugba 翡翠泻湖</div><div class="sub">Del Carmen 乘船进湖 · Maasin 河秋千</div></div>
+      <div class="arrow">›</div>
+    </button>
+    <div class="day-body">
+      <div class="tl">
+        <div class="time">07:00</div><div>出发避开人流，<a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Del+Carmen+Port+Siargao&travelmode=driving" target="_blank" rel="noopener">Del Carmen 码头</a>乘船进 Sugba 泻湖 <span class="tag">提前订船</span></div>
+        <div class="time">08:30</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Sugba+Lagoon+Siargao" target="_blank" rel="noopener">Sugba 泻湖</a> SUP / 独木舟 / 高台跳水</div>
+        <div class="time">13:00</div><div>返程途经 <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Coconut+Mountain+View+Deck+Siargao&travelmode=driving" target="_blank" rel="noopener">Coconut Mountain 观景台</a> 看全景椰林</div>
+        <div class="time">15:30</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Maasin+River+Siargao&travelmode=driving" target="_blank" rel="noopener">Maasin 河</a> 棕榈秋千跳水</div>
+        <div class="time">18:00</div><div>回 GL 烧烤大排档吃炭烤海鲜</div>
+      </div>
+      <div class="minimap">
+        <svg viewBox="0 0 760 520">
+          <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z" fill="rgba(245,158,11,.08)" stroke="#94a3b8" stroke-width="2.5"/>
+          <path d="M465,355 C380,320 260,280 175,235 C200,260 230,265 250,260 C330,300 400,360 435,400" fill="none" stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="170" cy="232" r="6" fill="#f59e0b"/><text x="150" y="215" font-size="12" text-anchor="middle">Sugba</text>
+          <circle cx="248" cy="258" r="5" fill="#f59e0b"/><text x="248" y="285" font-size="12" text-anchor="middle">椰林观景台</text>
+          <circle cx="438" cy="402" r="5" fill="#f59e0b"/><text x="405" y="425" font-size="12" text-anchor="middle">Maasin河</text>
+          <circle cx="470" cy="358" r="8" fill="#0e7490"/><text x="500" y="355" font-size="12">GL</text>
+        </svg>
+      </div>
+      <a class="navbtn" href="https://www.google.com/maps/dir/?api=1&origin=Vibes+Villas+Siargao&destination=Maasin+River+Siargao&waypoints=Sugba+Lagoon+Del+Carmen|Coconut+Mountain+View+Deck+Siargao&travelmode=driving" target="_blank" rel="noopener">一键打开全天导航</a>
+    </div>
+  </div>
+
+  <!-- D4 -->
+  <div class="day">
+    <button class="day-head">
+      <div><div class="title">10/5 周一 · Magpupungko 潮汐岩池</div><div class="sub">严格卡低潮 · Tayangban 溶洞</div></div>
+      <div class="arrow">›</div>
+    </button>
+    <div class="day-body">
+      <div class="tl">
+        <div class="time">上午</div><div><span class="tag">按低潮时间定</span> 低潮前2小时抵达 <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Magpupungko+Rock+Pools+Siargao&travelmode=driving" target="_blank" rel="noopener">Magpupungko 岩池</a>，翡翠池、礁石溶洞、浅滩浮潜</div>
+        <div class="time">午后</div><div>顺路 <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Tayangban+Cave+Pool+Siargao&travelmode=driving" target="_blank" rel="noopener">Tayangban 地下溶洞泳池</a>，小型洞穴跳水</div>
+        <div class="time">下午</div><div>环岛沿海公路兜风，小众无人沙滩放空</div>
+      </div>
+      <div class="minimap">
+        <svg viewBox="0 0 760 520">
+          <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z" fill="rgba(168,85,247,.08)" stroke="#94a3b8" stroke-width="2.5"/>
+          <path d="M465,355 C500,310 525,275 545,255 C552,245 558,230 560,215" fill="none" stroke="#a855f7" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="562" cy="212" r="6" fill="#a855f7"/><text x="590" y="205" font-size="12">Magpupungko</text>
+          <circle cx="545" cy="255" r="4.5" fill="#a855f7"/><text x="560" y="275" font-size="12">Tayangban</text>
+          <circle cx="470" cy="358" r="8" fill="#0e7490"/><text x="445" y="385" font-size="12">GL</text>
+        </svg>
+      </div>
+      <a class="navbtn" href="https://www.google.com/maps/dir/?api=1&origin=Vibes+Villas+Siargao&destination=Magpupungko+Rock+Pools+Siargao&waypoints=Tayangban+Cave+Pool&travelmode=driving" target="_blank" rel="noopener">一键打开全天导航</a>
+    </div>
+  </div>
+
+  <!-- D5 -->
+  <div class="day">
+    <button class="day-head">
+      <div><div class="title">10/6 周二 · 冲浪入门日</div><div class="sub">一对一大众教学 · Jacking Horse</div></div>
+      <div class="arrow">›</div>
+    </button>
+    <div class="day-body">
+      <div class="tl">
+        <div class="time">上午</div><div>一对一冲浪教学 <span class="tag">提前约课</span>：<a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Jacking+Horse+Siargao&travelmode=walking" target="_blank" rel="noopener">Jacking Horse</a>，浪温水浅、适合第一次站板</div>
+        <div class="time">下午</div><div>自由练习，沙滩躺平休息</div>
+        <div class="time">傍晚</div><div><a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Cloud+9+Siargao&travelmode=walking" target="_blank" rel="noopener">Cloud9 码头</a> 看日落冲浪、记录管状浪</div>
+      </div>
+      <div class="minimap">
+        <svg viewBox="0 0 760 520">
+          <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z" fill="rgba(59,130,246,.08)" stroke="#94a3b8" stroke-width="2.5"/>
+          <path d="M465,360 C460,380 455,395 450,405" fill="none" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="470" cy="358" r="8" fill="#0e7490"/><text x="490" y="355" font-size="12">GL</text>
+          <circle cx="448" cy="408" r="5" fill="#3b82f6"/><text x="415" y="412" font-size="12">Cloud9/Jacking</text>
+        </svg>
+      </div>
+      <a class="navbtn" href="https://www.google.com/maps/dir/?api=1&origin=Vibes+Villas+Siargao&destination=Cloud+9+Siargao&waypoints=Jacking+Horse+Siargao&travelmode=walking" target="_blank" rel="noopener">一键打开全天导航</a>
+    </div>
+  </div>
+
+  <!-- D6 -->
+  <div class="day">
+    <button class="day-head">
+      <div><div class="title">10/7 周三 · Sohoton 水母湖</div><div class="sub">全天出海长线 · 风浪大则改北环岛 Pacifico</div></div>
+      <div class="arrow">›</div>
+    </button>
+    <div class="day-body">
+      <div class="tl">
+        <div class="time">全天</div><div>长线出海 <span class="tag">提前订船</span>：<a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Sohoton+Cove+Bucas+Grande" target="_blank" rel="noopener">Sohoton 洞穴</a> 皮划艇穿溶洞、无毒金色水母湖浮潜、天然河道跳潭，含船上午餐。行程偏体力，回岛后放松。</div>
+        <div class="time">备选</div><div>风浪大改 <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Pacifico+Beach+Siargao&travelmode=driving" target="_blank" rel="noopener">Pacifico 海滩</a> 北环岛：摩托30分钟，左手浪、废弃灯塔、北岸野生椰林</div>
+      </div>
+      <div class="minimap">
+        <svg viewBox="0 0 760 520">
+          <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z" fill="rgba(239,68,68,.08)" stroke="#94a3b8" stroke-width="2.5"/>
+          <ellipse cx="690" cy="230" rx="42" ry="26" fill="rgba(239,68,68,.10)" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 5"/>
+          <text x="690" y="234" font-size="11" text-anchor="middle" fill="#ef4444">Sohoton</text>
+          <path d="M470,365 C540,330 610,280 660,245" fill="none" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="7 6"/>
+          <circle cx="470" cy="358" r="8" fill="#0e7490"/><text x="445" y="385" font-size="12">GL</text>
+          <circle cx="430" cy="92" r="5" fill="#6b7280"/><text x="430" y="75" font-size="12">Pacifico(备选)</text>
+        </svg>
+      </div>
+      <a class="navbtn" href="https://www.google.com/maps/dir/?api=1&origin=General+Luna+Siargao&destination=Sohoton+Cove+Bucas+Grande" target="_blank" rel="noopener">一键打开全天导航</a>
+    </div>
+  </div>
+
+  <!-- D7 -->
+  <div class="day">
+    <button class="day-head">
+      <div><div class="title">10/8 周四 · 离岛返程</div><div class="sub">GL 退房 → Sayak 机场 → 宿务过夜</div></div>
+      <div class="arrow">›</div>
+    </button>
+    <div class="day-body">
+      <div class="tl">
+        <div class="time">上午</div><div>浅滩最后踩水，<a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Shaka+Cafe+Siargao&travelmode=walking" target="_blank" rel="noopener">Shaka 热带碗</a>早餐，采购伴手礼</div>
+        <div class="time">中午</div><div>Vibes Villas 退房</div>
+        <div class="time">下午</div><div>包车去 <a class="maplink" href="https://www.google.com/maps/dir/?api=1&origin=Vibes+Villas+Siargao&destination=Sayak+Airport+Del+Carmen+Siargao&travelmode=driving" target="_blank" rel="noopener">Sayak 机场</a>，飞宿务 <span class="tag">航班待确认</span>，住机场附近</div>
+        <div class="time">夜</div><div>约 23:30 前到宿务 T2，准备 02:40 红眼</div>
+      </div>
+      <div class="minimap">
+        <svg viewBox="0 0 760 520">
+          <path d="M110,300 C115,240 160,180 230,140 C300,105 400,95 480,125 C540,148 575,190 575,245 C575,300 545,350 490,380 C430,415 340,430 260,410 C185,392 115,355 110,300 Z" fill="rgba(107,114,128,.08)" stroke="#94a3b8" stroke-width="2.5"/>
+          <path d="M455,350 C400,270 340,190 298,135" fill="none" stroke="#6b7280" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 6"/>
+          <circle cx="470" cy="358" r="8" fill="#0e7490"/><text x="490" y="355" font-size="12">GL</text>
+          <circle cx="295" cy="128" r="7" fill="#6b7280"/><text x="295" y="108" font-size="12">Sayak机场</text>
+        </svg>
+      </div>
+      <a class="navbtn" href="https://www.google.com/maps/dir/?api=1&origin=Vibes+Villas+Siargao&destination=Sayak+Airport+Del+Carmen+Siargao&travelmode=driving" target="_blank" rel="noopener">一键打开全天导航</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5 待办 -->
+<section class="card">
+  <h2><span class="dot"></span>待办清单</h2>
+  <ol class="todo">
+    <li>盯 PR337、5J565 的出票结果（目前显示"出票中"）</li>
+    <li>问同行人要：宿务 ↔ 锡亚高两段航班的航班号和时刻</li>
+    <li>问同行人要：9/30 马尼拉、10/1 和 10/8 宿务，共三晚酒店名称地址电话</li>
+    <li>问同行人要：机场包车、租摩托、三岛跳岛 / Sugba / Sohoton 的预订确认</li>
+    <li>出发前查 10/5 前后 Magpupungko 的低潮时刻，当天上午按低潮排</li>
+    <li>提前约 10/6 上午的冲浪入门课</li>
+    <li>确认两人护照有效期均超过 6 个月，打印电子行程单备用</li>
+    <li>换比索现金（岛上刷卡不便），办国际驾照翻译件（骑摩托用）</li>
+    <li>提前办菲律宾 eSIM / 电话卡，落地即有网</li>
+    <li>10/8 晚住宿务机场附近，红眼 02:40，约 23:30 前到 T2 值机</li>
+  </ol>
+</section>
+
+<!-- 6 实用贴士 -->
+<section class="card">
+  <h2><span class="dot"></span>实用贴士</h2>
+  <ul class="tips">
+    <li>时区：菲律宾 UTC+8，和国内同时区；页面所有时间均为当地时间，跨时区打开倒计时也不会错。</li>
+    <li>上岛交通：Sayak 机场到 GL 约 40 分钟包车；摩托 300–500 比索/天，环岛路况好，必须戴头盔。</li>
+    <li>冲浪：新手去 Jacking Horse（浪温水浅），进阶 Stimpy's，高手才上 Cloud9；板租 500–800 比索/天。</li>
+    <li>潮汐：Magpupungko 岩池、Sohoton 水母湖严格卡低潮，涨潮不能下水，别硬去。</li>
+    <li>必带：高倍防晒、水母衣、礁鞋、防水袋、肠胃药、驱蚊液、现金比索。</li>
+    <li>马尼拉中转：PR337 落 T1，5J565 从 T3 飞，早上值机留足航站楼换乘时间。</li>
+    <li>回程红眼：MU5024 是 10/9 凌晨 02:40，10/8 白天别安排远途，早点回宿务机场。</li>
+    <li>旺季提示：国庆档正值冲浪季，跳岛、Sugba、Sohoton 船只和冲浪课都提前订。</li>
+  </ul>
+</section>
+
+<div class="foot">锡亚高 · 10 月旅程</div>
+</div>
+
+<script>
+var EVENTS = [
+  {t:'2026-09-30T16:00:00+08:00', label:'PR337 起飞 · 上海浦东T2 → 马尼拉'},
+  {t:'2026-09-30T19:40:00+08:00', label:'PR337 抵达 · 马尼拉T1'},
+  {t:'2026-10-01T10:45:00+08:00', label:'5J565 起飞 · 马尼拉T3 → 宿务'},
+  {t:'2026-10-01T12:20:00+08:00', label:'5J565 抵达 · 宿务马克坦'},
+  {t:'2026-10-09T02:40:00+08:00', label:'MU5024 起飞 · 宿务T2 → 上海'},
+  {t:'2026-10-09T06:45:00+08:00', label:'MU5024 抵达 · 上海浦东T1'}
+];
+function pad(n){return String(n).padStart(2,'0');}
+function tick(){
+  var now = new Date();
+  var next = null;
+  for(var i=0;i<EVENTS.length;i++){
+    var et = new Date(EVENTS[i].t);
+    if(et.getTime() > now.getTime() && (!next || et < next.time)){
+      next = {time:et, label:EVENTS[i].label};
+    }
+  }
+  var labelEl = document.getElementById('nextLabel');
+  var nameEl = document.getElementById('nextName');
+  if(!next){
+    nameEl.textContent = '旅程已结束，欢迎回家';
+    document.getElementById('cdD').textContent='--';
+    document.getElementById('cdH').textContent='--';
+    document.getElementById('cdM').textContent='--';
+    document.getElementById('cdS').textContent='--';
+    return;
+  }
+  var diff = next.time.getTime() - now.getTime();
+  var d = Math.floor(diff/86400000);
+  var h = Math.floor(diff/3600000)%24;
+  var m = Math.floor(diff/60000)%60;
+  var s = Math.floor(diff/1000)%60;
+  labelEl.textContent = '下一个行程事件（当地时间）';
+  nameEl.textContent = next.label;
+  document.getElementById('cdD').textContent = d;
+  document.getElementById('cdH').textContent = pad(h);
+  document.getElementById('cdM').textContent = pad(m);
+  document.getElementById('cdS').textContent = pad(s);
+}
+setInterval(tick, 1000);
+tick();
+
+document.querySelectorAll('.day-head').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    btn.parentElement.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>
